@@ -7,9 +7,9 @@ node {
    }
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
-       sh 'cd jenkins_test'
-       sh 'npm install --only=dev'
-       sh 'npm test'
+       bat 'cd jenkins_test'
+       bat 'npm install --only=dev'
+       bat 'npm test'
      }
    }
    stage('docker build/push') {

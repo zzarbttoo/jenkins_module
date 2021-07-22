@@ -6,7 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     nodejs(nodeJSInstallationName: 'recent_node') {
+     nodejs(nodeJSInstallationName: 'node_14') {
        bat 'cd jenkins_test'
        bat 'npm install --only=dev'
        bat 'npm test'

@@ -15,7 +15,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+     docker.withRegistry('https://index.docker.io/v1/', 'docker_window') {
        def app = docker.build("zzarbttoo/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }

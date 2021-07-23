@@ -8,6 +8,7 @@ node {
    stage('test') {
      nodejs(nodeJSInstallationName: 'node_14') {
       dir('jenkins_test'){
+       bat 'npm install'
        bat 'npm install --only=dev'
        bat 'npm test'
       }
